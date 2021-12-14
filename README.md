@@ -1,32 +1,17 @@
-## Via Oberta – Estrangeria - Dades de residència legal - Document d’integració del servei
+# Via Oberta – Estrangeria
+Documentació d'integració del servei Estrangeria del Consorci AOC.
 
-## Índex
+# **Índex** #
 
-##### 1 Introducció ...................................................................................................................................
+1. [Introducció](#1)
+2. [Transmissions de dades disponibles](#2)
+3. [Missatgeria del servei]
+   1. [Verificació de les dades de residència legal (RESIDENCIA_LEGAL)]
+      1. [Petició – dades genèriques]
+      2. [Petició – dades específiques]
+      3. [Resposta – dades específiques]
 
-##### 2 Transmissions de dades disponibles ..........................................................................................
-
-##### 3 Missatgeria dels serveis ..............................................................................................................
-
-##### 3.1 Verificació de les dades de residència legal (RESIDENCIA_LEGAL) .......................................
-
-##### 3.1.1 Petició – dades genèriques ................................................................................ 1
-
-##### 3.1.2 Petició – dades específiques .............................................................................. 2
-
-##### 3.1.3 Resposta – dades específiques ......................................................................... 2
-
-
-DI - Via Oberta - Estrangeria - Dades de residència legal.doc
-
-```
-Integració del servei Via Oberta - Estrangeria -
-Dades de residència legal
-```
-```
-pàg 1/
-```
-## 1 Introducció
+## 1 Introducció <a name="1"></a>
 
 Aquest document detalla la missatgeria associada al servei d’obtenció de les dades de residència
 legal del Ministerio de Interior.
@@ -35,20 +20,19 @@ Per a poder realitzar la integració cal conèixer prèviament la següent docum
 
 - Document de Missatgeria Genèrica de la PCI del Consorci AOC.
 
-## 2 Transmissions de dades disponibles
+## 2 Transmissions de dades disponibles <a name="2"></a>
 
 Les dades disponibles a través del servei són les que es presenten a continuació:
 
-###### EMISSOR
+- **EMISSOR**: Ministerio de Interior 
 
-```
-Ministerio de Interior
-PRODUCTE MODALITAT DESCRIPCIÓ
-ESTRANGERIA RESIDENCIA_LEGAL Consulta de les dades de residència legal.
-```
+| **PRODUCTE** | **MODALITAT** | **DESCRIPCIO** |
+| --- | --- | --- |
+| **ESTRANGERIA** | RESIDENCIA_LEGAL  | Consulta de les dades de residència legal.
+
 La consulta del producte té disponible la versió imprimible del resultat de la consulta en format PDF.
 Per més detalls adreceu-vos a l’apartat Extensions de missatgeria del document de missatgeria
-genèrica.
+genèrica. 
 
 ## 3 Missatgeria dels serveis
 
