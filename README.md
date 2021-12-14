@@ -56,12 +56,20 @@ Així, cal informar els següents camps de l’element Funcionario del bloc de d
 
 #### 3.1.2 Petició – dades específiques <a name="3.1.2"></a>
 
+<p align="center">
+<img align="center" src="img/peticioConsultaDadesResidencia.png" />
+</p>
+
 | _Element_ | _Descripció_ |
 | --- | --- |
 peticioConsultaDadesResidenciaLegal/dataNaixement | Any de naixement del titular (format AAAA).
 peticioConsultaDadesResidenciaLegal/nacionalitat | Nacionalitat del titular (codificació ISO 3166-1 Alpha 3). 
 
 #### 3.1.3 Resposta – dades específiques <a name="3.1.3"></a>
+
+<p align="center">
+<img align="center" src="img/respostaConsultaDadesResidencia.png" />
+</p>
 
 | _Element_ | _Descripció_ |
 | --- | --- |
@@ -79,3 +87,7 @@ respostaVerificacioDadesResidencia/resultat/descripcio | Descripció del resulta
 //EstadoSituacion/FechaCaducidad | Data de caducitat de la residència legal (format DD/MM/AAAA ).
 //EstadoSituacion/Renovacion</br>/FechaSolicitudRenovacion | Data de la sol·licitud de renovació de la residència legal.</br>En cas de que l’autorització hagi caducat, el camp vindrà informat només en el cas que el titular hagi presentat una sol·licitud de renovació.</br>Durant el tràmit de renovació, s’estén la vigència anterior.
 //EstadoSituacion/EstanciaEspecial | Indicador de si té permís d’Estància Especial segons Art 37 RD 557/2011: <ul><li>1 : Estudis.</li><li>2 : Investigació o formació.</li><li>3 : Mobilitat alumnes.</li><li>4 : Pràctiques no laborables.</li><li>5 : Serveis de voluntariat.</li><li>6 : Estudis MIR.</li><li>7 : Altres estàncies.</li><li>8 : Estudis / intercanvi.</li><li>10 : Estudis familiar.</li><li>11 : Investigació o formació familiar.</li><li>12 : Mobilitat d’alumnes familiar.</li><li>13 : Pràctiques no laborables familiar.</li><li>14 : Serveis de voluntariat familiar.</li></ul>
+
+<p align="center">
+<img align="center" src="img/EstadoSituacion.png" />
+</p>
