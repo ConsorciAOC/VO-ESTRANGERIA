@@ -5,11 +5,11 @@ Documentació d'integració del servei Estrangeria del Consorci AOC.
 
 1. [Introducció](#1)
 2. [Transmissions de dades disponibles](#2)
-3. [Missatgeria del servei]
-   1. [Verificació de les dades de residència legal (RESIDENCIA_LEGAL)]
-      1. [Petició – dades genèriques]
-      2. [Petició – dades específiques]
-      3. [Resposta – dades específiques]
+3. [Missatgeria del servei](#3)
+   1. [Verificació de les dades de residència legal (RESIDENCIA_LEGAL)](#3.1)
+      1. [Petició – dades genèriques](#3.1.1)
+      2. [Petició – dades específiques](#3.1.2)
+      3. [Resposta – dades específiques](#3.1.3)
 
 ## 1 Introducció <a name="1"></a>
 
@@ -34,7 +34,7 @@ La consulta del producte té disponible la versió imprimible del resultat de la
 Per més detalls adreceu-vos a l’apartat Extensions de missatgeria del document de missatgeria
 genèrica. 
 
-## 3 Missatgeria dels serveis
+## 3 Missatgeria dels serveis <a name="3"></a>
 
 ```
 L’emissor de les dades requereix que s’informin les dades del funcionari que realitza la consulta.
@@ -46,158 +46,38 @@ Així, cal informar els següents camps de l’element Funcionario del bloc de d
 //SolicitudTransmision/DatosGenericos/Solicitante/Funcionario/NombreCompletoFuncionario i
 //SolicitudTransmision/DatosGenericos/Solicitante/Funcionario/NifFuncionario
 ```
-### 3.1 Verificació de les dades de residència legal
+### 3.1 Verificació de les dades de residència legal (RESIDENCIA_LEGAL) <a name="3.1"></a>
 
-### (RESIDENCIA_LEGAL)
+#### 3.1.1 Petició – dades genèriques <a name="3.1.1"></a>
 
-#### 3.1.1 Petició – dades genèriques
+| _Element_ | _Descripció_ |
+| --- | --- |
+//DatosGenericos/Titular/TipoDocumentacion | Tipus de documentació (NIE ).
+//DatosGenericos/Titular/Documentacion | Documentació.
 
-```
-Element Descripció
-```
-//DatosGenericos/Titular/TipoDocumentacion (^) Tipus de documentació (NIE ).
-//DatosGenericos/Titular/Documentacion Documentació.
+#### 3.1.2 Petició – dades específiques <a name="3.1.2"></a>
 
+| _Element_ | _Descripció_ |
+| --- | --- |
+peticioConsultaDadesResidenciaLegal/dataNaixement | Any de naixement del titular (format AAAA).
+peticioConsultaDadesResidenciaLegal/nacionalitat | Nacionalitat del titular (codificació ISO 3166-1
+Alpha 3). 
 
-DI - Via Oberta - Estrangeria - Dades de residència legal.doc
+#### 3.1.3 Resposta – dades específiques <a name="3.1.3"></a>
 
-```
-Integració del servei Via Oberta - Estrangeria -
-Dades de residència legal
-```
-```
-pàg 2/
-```
-#### 3.1.2 Petició – dades específiques
+| _Element_ | _Descripció_ |
+| --- | --- |
+respostaVerificacioDadesResidencia/EstadoSituacion | Bloc de dades corresponent a la informació sobreles dades de residencia legal del titular.
+respostaVerificacioDadesResidencia/resultat/codiResultat | Codi de resultat: <ul><li>0000 : existeix autorització de residència o estància.</li><li>0001 : no existeix autorització de residència o estància.</li><li>0002 : ciutadà nacionalitzat espanyol.</li><li>0003 : no s’ha localitzat cap ciutadà amb la documentació aportada.</li><li>0004 : existeix més d’un estranger amb les dades proporcionades. Cal informar més a la consulta per a distingir-los.</li><li>0502 : error realitzant la consulta.</li></ul>
+respostaVerificacioDadesResidencia/resultat/descripcio | Descripció del resultat.
 
-Element Descripció
-peticioConsultaDadesResidenciaLegal/
-dataNaixement
-
-```
-Any de naixement del titular (format AAAA).
-```
-peticioConsultaDadesResidenciaLegal/
-nacionalitat
-
-```
-Nacionalitat del titular (codificació ISO 3166-
-Alpha 3).
-```
-#### 3.1.3 Resposta – dades específiques
-
-Element Descripció
-respostaVerificacioDadesResidencia/
-EstadoSituacion
-
-```
-Bloc de dades corresponent a la informació sobre
-les dades de residencia legal del titular.
-```
-respostaVerificacioDadesResidencia/
-resultat/codiResultat
-
-```
-Codi de resultat:
-```
-- 0000 : existeix autorització de residència o
-    estància.
-- 0001 : no existeix autorització de residència o
-    estància.
-- 0002 : ciutadà nacionalitzat espanyol.
-- 0003 : no s’ha localitzat cap ciutadà amb la
-    documentació aportada.
-- 0004 : existeix més d’un estranger amb les
-    dades proporcionades. Cal informar més a la
-    consulta per a distingir-los.
-- 0502 : error realitzant la consulta.
-
-respostaVerificacioDadesResidencia/
-resultat/descripcio
-
-```
-Descripció del resultat.
-```
-
-```
-DI - Via Oberta - Estrangeria - Dades de residència legal.doc
-```
-```
-Integració del servei Via Oberta - Estrangeria -
-Dades de residència legal
-```
-```
-pàg 3/
-```
-```
 3.1.3.1 EstadoSituacion
-```
-Element Descripció
-//EstadoSituacion/Residencia
-Tipus d’autorització de residència:
 
-- 0 : Sense permís.
-- 1 : Comunitari.
-- 2 : Familiar de comunitari.
-- 3 : Extracomunitari.
-
-```
-Pot donar-se el cas que el codi de residència
-sigui 0 i el codi de resultat sigui 0000. Aquest
-cas indica que el ciutadà disposa de permís
-d’estància però no de residència.
-```
-//EstadoSituacion/DescripcionAutorizacion
-Descripció literal del tipus d’autorització de la residència.
-
-//EstadoSituacion/FechaResolucion
-Data de resolució del tràmit de residència (format
-DD/MM/AAAA ).
-
-//EstadoSituacion/FechaCaducidad
-Data de caducitat de la residència legal (format
-DD/MM/AAAA ).
-
-//EstadoSituacion/Renovacion
-/FechaSolicitudRenovacion
-
-```
-Data de la sol·licitud de renovació de la residència legal.
-```
-```
-En cas de que l’autorització hagi caducat, el camp vindrà
-informat només en el cas que el titular hagi presentat una
-sol·licitud de renovació.
-```
-```
-Durant el tràmit de renovació, s’estén la vigència anterior.
-```
-//EstadoSituacion/EstanciaEspecial
-Indicador de si té permís d’Estància Especial segons Art
-37 RD 557/2011:
-
-- 1 : Estudis.
-- 2 : Investigació o formació.
-- 3 : Mobilitat alumnes.
-- 4 : Pràctiques no laborables.
-- 5 : Serveis de voluntariat.
-- 6 : Estudis MIR.
-- 7 : Altres estàncies.
-- 8 : Estudis / intercanvi.
-- 10 : Estudis familiar.
-- 11 : Investigació o formació familiar.
-- 12 : Mobilitat d’alumnes familiar.
-- 13 : Pràctiques no laborables familiar.
-- 14 : Serveis de voluntariat familiar.
-
-
-DI - Via Oberta - Estrangeria - Dades de residència legal.doc
-
-```
-Integració del servei Via Oberta - Estrangeria -
-Dades de residència legal
-```
-```
-pàg 4/
-```
-
+| _Element_ | _Descripció_ |
+| --- | --- |
+//EstadoSituacion/Residencia | Tipus d’autorització de residència: <ul><li>0 : Sense permís.</li><li>1 : Comunitari.</li><li>2 : Familiar de comunitari.</li><li>3 : Extracomunitari.</li></ul></br></br>Pot donar-se el cas que el codi de residència sigui 0 i el codi de resultat sigui 0000. Aquest cas indica que el ciutadà disposa de permís d’estància però no de residència.
+//EstadoSituacion/DescripcionAutorizacion | Descripció literal del tipus d’autorització de la residència.
+//EstadoSituacion/FechaResolucion | Data de resolució del tràmit de residència (format DD/MM/AAAA ).
+//EstadoSituacion/FechaCaducidad | Data de caducitat de la residència legal (format DD/MM/AAAA ).
+//EstadoSituacion/Renovacion</br>/FechaSolicitudRenovacion | Data de la sol·licitud de renovació de la residència legal.</br>En cas de que l’autorització hagi caducat, el camp vindrà informat només en el cas que el titular hagi presentat una sol·licitud de renovació.</br> Durant el tràmit de renovació, s’estén la vigència anterior.
+//EstadoSituacion/EstanciaEspecial | Indicador de si té permís d’Estància Especial segons Art 37 RD 557/2011: <ul><li>1 : Estudis.</li><li>2 : Investigació o formació.</li><li>3 : Mobilitat alumnes.</li><li>4 : Pràctiques no laborables.</li><li>5 : Serveis de voluntariat.</li><li>6 : Estudis MIR.</li><li>7 : Altres estàncies.</li><li>8 : Estudis / intercanvi.</li><li>10 : Estudis familiar.</li><li>11 : Investigació o formació familiar.</li><li>12 : Mobilitat d’alumnes familiar.</li><li>13 : Pràctiques no laborables familiar.</li><li>14 : Serveis de voluntariat familiar.</li></ul>
