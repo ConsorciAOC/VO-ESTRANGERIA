@@ -74,7 +74,7 @@ peticioConsultaDadesResidenciaLegal/nacionalitat | Nacionalitat del titular (cod
 | _Element_ | _Descripció_ |
 | --- | --- |
 respostaVerificacioDadesResidencia/EstadoSituacion | Bloc de dades corresponent a la informació sobreles dades de residencia legal del titular.
-respostaVerificacioDadesResidencia/resultat/codiResultat | Codi de resultat: <ul><li>0000 : existeix autorització de residència o estància.</li><li>0001 : no existeix autorització de residència o estància.</li><li>0002 : ciutadà nacionalitzat espanyol.</li><li>0003 : no s’ha localitzat cap ciutadà amb la documentació aportada.</li><li>0004 : existeix més d’un estranger amb les dades proporcionades. Cal informar més a la consulta per a distingir-los.</li><li>0502 : error realitzant la consulta.</li></ul>
+respostaVerificacioDadesResidencia/resultat/codiResultat | Codi de resultat:<ul><li>0000 : existeix autorització de residència o estància.</li><li>0001 : no existeix autorització de residència o estància.</li><li>0002 : ciutadà nacionalitzat espanyol.</li><li>0003 : no s’ha localitzat cap ciutadà amb la documentació aportada.</li><li>0004 : existeix més d’un estranger amb les dades proporcionades. Cal informar més a la consulta per a distingir-los.</li><li>0502 : error realitzant la consulta.</li></ul>
 respostaVerificacioDadesResidencia/resultat/descripcio | Descripció del resultat.
 
 3.1.3.1 EstadoSituacion
